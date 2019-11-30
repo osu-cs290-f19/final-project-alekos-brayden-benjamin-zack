@@ -33,55 +33,33 @@
       </section>
       <!-- End Add Event -->
 
-      <!--Maybe? <aside class="filter-container"> -->
-      <section id="filter-container">
-        <h2>Filter Events</h2>
-        <div class="filter-input-container">
-          <label for="filter-text" class="filter-input-label">Text</label>
-          <div class="filter-input-element">
-            <input type="text" name="filter-text" id="filter-text" class="filter-input">
-          </div>
-        </div>
-
-        <div class="filter-input-container">
-          <label for="filter-type">Filter Type</label>
-          <div class="filter-input-element">
-            <select id="filter-type" class="filter-input" name="filter-type">
-              <!--<option selected value="">Any</option> -->
-              <option>Description</option>
-              <option>Month</option>
-              <option>Year</option>
-            </select>
-          </div>
-        </div>
-
-        <button id="filter-update-button" class="action-button">Update</button>
-
-      <!--</aside>-->
-      </section>
-      <!-- End Filters -->
-
       <section id="posts">
 
         <div class="post" data-month="January" data-day="12" data-year="2019">
           <div class="post-contents">
+
             <div class="post-image-container">
               <img src="https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg" alt="Super nice laptop">
             </div>
             <div class="post-info-container">
               <a href="#" class="post-title">Laptop Parade</a> <span class="post-month"> - January </span> <span class="post-day">12th, </span> <span class="post-year">2019</span>
             </div>
-          </div>
-        </div>
 
-        <div class="post" data-month="March" data-day="5" data-year="2020">
-          <div class="post-contents">
-            <div class="post-image-container">
-              <img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_2276,w_4043,x_0,y_23/f_auto,q_auto,w_1100/v1553128862/shape/mentalfloss/536413-istock-459987119.jpg" alt="Super nice laptop">
+            <div class="post-interaction-container">
+              <!--Name: Going/Interested/No -->
+              <div class="post-input-element">
+                <input type="text" name="interaction-name" id="interaction-name" class="filter-input" placeholder="Name">
+              </div>
+              <div class="post-input-element">
+                <select id="interaction-interest" class="filter-input" name="interaction-interest">
+                  <option>Going</option>
+                  <option>Interested</option>
+                  <option>Not Going</option>
+                </select>
+              </div>
+              <button id="interest-update-button" class="action-button">Submit</button>
             </div>
-            <div class="post-info-container">
-              <a href="#" class="post-title">Puppy Meetup</a> <span class="post-month"> - March </span> <span class="post-day">5th, </span> <span class="post-year">2020</span>
-            </div>
+
           </div>
         </div>
 
@@ -92,7 +70,7 @@
     </main>
 
     <!-- This is present at bottom add hidden in CSS unless add-something-button is pressed -->
-
+<!--
     <div id="modal-backdrop" class="hidden"></div>
     <div id="add-something-modal" class="hidden">
       <div class="modal-dialog">
@@ -138,6 +116,6 @@
 
       </div>
     </div>
-
+-->
   </body>
 </html>
