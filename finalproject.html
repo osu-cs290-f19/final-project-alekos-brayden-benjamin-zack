@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Event Manager</title>
 
+    <!-- This 3rd-party stylesheet makes available the font families to be used for this page ("Roboto" and "Roboto Slab"). -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
+
+    <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" crossorigin="anonymous">
+
+  <!--  <link rel="stylesheet" href="style.css">  -->
+
+  <!--  <script src="index.js" charset="utf-8" defer></script> -->
+  </head>
+  <body>
+
+    <header>
+      <!--  Add picture here if we want could be like a calendar or something
+      <div class="header-image-container">
+        <img src="benny.jpg" alt="Benny logo">
+      </div>
+      -->
+      <h1 class="site-title"><a href="#">Event Manager</a></h1>
+
+    </header>
+
+    <main class="content">
+      <section id="add-container">
+        <h2>Create Your Own Event!</h2>
+        <button type="button" id="add-something-button" class="action-button">Create Event</button>
+      </section>
+      <!-- End Add Event -->
+
+      <!--Maybe? <aside class="filter-container"> -->
+      <section id="filter-container">
+        <h2>Filter Events</h2>
+        <div class="filter-input-container">
+          <label for="filter-text" class="filter-input-label">Text</label>
+          <div class="filter-input-element">
+            <input type="text" name="filter-text" id="filter-text" class="filter-input">
+          </div>
+        </div>
+
+        <div class="filter-input-container">
+          <label for="filter-type">Filter Type</label>
+          <div class="filter-input-element">
+            <select id="filter-type" class="filter-input" name="filter-type">
+              <!--<option selected value="">Any</option> -->
+              <option>Description</option>
+              <option>Month</option>
+              <option>Year</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="filter-update-button" class="action-button">Update</button>
+
+      <!--</aside>-->
+      </section>
+      <!-- End Filters -->
+
+      <section id="posts">
+
+        <div class="post" data-month="January" data-day="12" data-year="2019">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg" alt="Super nice laptop">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Laptop Parade</a> <span class="post-month"> - January </span> <span class="post-day">12th, </span> <span class="post-year">2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="post" data-month="March" data-day="5" data-year="2020">
+          <div class="post-contents">
+            <div class="post-image-container">
+              <img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_2276,w_4043,x_0,y_23/f_auto,q_auto,w_1100/v1553128862/shape/mentalfloss/536413-istock-459987119.jpg" alt="Super nice laptop">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Puppy Meetup</a> <span class="post-month"> - March </span> <span class="post-day">5th, </span> <span class="post-year">2020</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- End Posts -->
+
+    </main>
+
+    <!-- This is present at bottom add hidden in CSS unless add-something-button is pressed -->
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="add-something-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Create a new event!</h3>
+          <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="post-input-element">
+            <label for="post-text-input">Item description</label>
+            <input type="text" id="post-text-input"></input>
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-photo-input">Photo URL</label>
+            <input type="text" id="post-photo-input">
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-month-input">Event Month</label>
+            <input type="text" id="post-text-input"></input>
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-day-input">Event Day</label>
+            <input type="number" id="post-price-input">
+          </div>
+
+          <div class="post-input-element">
+            <label for="post-year-input">Event Year</label>
+            <input type="number" id="post-price-input">
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+          <button type="button" id="modal-accept" class="action-button">Create Event</button>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
