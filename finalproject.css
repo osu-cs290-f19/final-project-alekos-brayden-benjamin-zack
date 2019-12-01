@@ -1,1 +1,257 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: grey;
+}
 
+a {
+  text-decoration: none;
+  color: #7B0100;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: black;
+  text-align: center;
+  border-bottom: 2px solid #7B0100;
+}
+
+header a {
+  color: white;
+}
+
+
+/**********************************/
+
+.site-title {
+  font-family: "Roboto", serif;
+  font-size: 80px;
+  font-weight: 100;
+  margin: 0 0 0 20px;
+  padding: 30px;
+}
+
+.site-title a:hover {
+  text-decoration: none;
+}
+
+#add-container {
+  padding: 10px;
+  background-color: #424242;
+  align-items: center;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid #7B0100;
+}
+
+
+/**********************************/
+.content {
+  display: flex;
+
+}
+
+.action-button {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  background-color: #585858;
+  border: 1px solid #7B0100;
+  border-radius: 5px;
+  font-weight: lighter;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.action-button:hover {
+  background-color: #7B0100;
+  border-color: black;
+  color: white;
+}
+
+.post {
+  display: inline-block;
+  vertical-align: top;
+  height: 450px;
+  width: 400px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #7B0100;
+  border-radius: 3px;
+  background-color: lightgrey;
+}
+
+
+.post-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.post-image-container img {
+  max-height: 240px;
+  max-width: 300px;
+}
+
+.post-info-container {
+  width: 100%;
+  margin-top: 20px;
+  font-size: auto;
+}
+
+
+.post-interaction-container {
+  display: inline-block;
+  border: 1px solid #7B0100;
+  border-radius: 3px;
+  margin: 20px;
+  padding-right: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.filter-input {
+  width: 100%;
+  margin-left: 10px;
+}
+
+#interaction-name {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #7B0100;
+}
+
+#interaction-interest {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #7B0100;
+}
+
+.reservation-list {
+  font-size: 15px;
+  text-align: center;
+  padding-right: 10px;
+}
+ /*
+  * End Post stuff
+  */
+
+
+
+
+/*
+ * Modal stuff - From bennys list don't know if popup for create event or have it already there
+ */
+
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#sell-something-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.modal-header {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+#modal-close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.post-input-element {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.post-input-element > label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+}
+
+.post-input-element input {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+}
+
+.post-fieldset {
+  flex: 1 100%;
+  border: 1px solid #ababab;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+#modal-cancel,
+#modal-accept {
+  margin-right: 20px;
+}
+
+#modal-cancel {
+  color: #333;
+  background-color: #fff;
+}
+
+#modal-cancel:hover {
+  background-color: #eee;
+}
