@@ -10,7 +10,7 @@
     <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" crossorigin="anonymous">
 
-  <!--  <link rel="stylesheet" href="style.css">  -->
+    <link rel="stylesheet" href="finalproject.css">
 
   <!--  <script src="index.js" charset="utf-8" defer></script> -->
   </head>
@@ -26,15 +26,17 @@
 
     </header>
 
-    <main class="content">
-      <section id="add-container">
-        <h2>Create Your Own Event!</h2>
-        <button type="button" id="add-something-button" class="action-button">Create Event</button>
-      </section>
+    <section id="add-container">
+      <h2>Create Your Own Event!</h2>
+      <button type="button" id="add-something-button" class="action-button">Create Event</button>
+    </section>
+
+
       <!-- End Add Event -->
 
       <section id="posts">
 
+        <!-- New Post -->
         <div class="post" data-month="January" data-day="12" data-year="2019">
           <div class="post-contents">
 
@@ -42,7 +44,7 @@
               <img src="https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg" alt="Super nice laptop">
             </div>
             <div class="post-info-container">
-              <a href="#" class="post-title">Laptop Parade</a> <span class="post-month"> - January </span> <span class="post-day">12th, </span> <span class="post-year">2019</span>
+              <a href="#" class="post-title">Laptop Parade</a> <span class="post-month"> - January </span> <span class="post-day">12, </span> <span class="post-year">2019</span>
             </div>
 
             <div class="post-interaction-container">
@@ -59,7 +61,123 @@
               </div>
               <button id="interest-update-button" class="action-button">Submit</button>
             </div>
+            <a href="#" class="reservation-list">- see who else is going -</a>
+          </div>
+        </div>
 
+        <!-- New Post -->
+        <div class="post" data-month="December" data-day="20" data-year="2019">
+          <div class="post-contents">
+
+            <div class="post-image-container">
+              <img src="https://i.ytimg.com/vi/mRzLJcbUVek/maxresdefault.jpg" alt="Super nice laptop">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Star Wars Marathon</a> <span class="post-month"> - December </span> <span class="post-day">20, </span> <span class="post-year">2019</span>
+            </div>
+
+            <div class="post-interaction-container">
+              <!--Name: Going/Interested/No -->
+              <div class="post-input-element">
+                <input type="text" name="interaction-name" id="interaction-name" class="filter-input" placeholder="Name">
+              </div>
+              <div class="post-input-element">
+                <select id="interaction-interest" class="filter-input" name="interaction-interest">
+                  <option>Going</option>
+                  <option>Interested</option>
+                  <option>Not Going</option>
+                </select>
+              </div>
+              <button id="interest-update-button" class="action-button">Submit</button>
+            </div>
+            <a href="#" class="reservation-list">- see who else is going -</a>
+          </div>
+        </div>
+
+        <!-- New Post -->
+        <div class="post" data-month="June" data-day="9" data-year="2020">
+          <div class="post-contents">
+
+            <div class="post-image-container">
+              <img src="https://brooklynreporter.com/wp-content/uploads/2019/07/Corazon_Hot_Dog_Eating_Contest_DSC_3341-1024x683.jpg" alt="Super nice laptop">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Hotdog Eating Contest</a> <span class="post-month"> - June </span> <span class="post-day">9, </span> <span class="post-year">2020</span>
+            </div>
+
+            <div class="post-interaction-container">
+              <!--Name: Going/Interested/No -->
+              <div class="post-input-element">
+                <input type="text" name="interaction-name" id="interaction-name" class="filter-input" placeholder="Name">
+              </div>
+              <div class="post-input-element">
+                <select id="interaction-interest" class="filter-input" name="interaction-interest">
+                  <option>Going</option>
+                  <option>Interested</option>
+                  <option>Not Going</option>
+                </select>
+              </div>
+              <button id="interest-update-button" class="action-button">Submit</button>
+            </div>
+            <a href="#" class="reservation-list">- see who else is going -</a>
+          </div>
+        </div>
+
+        <!-- New Post -->
+        <div class="post" data-month="December" data-day="2" data-year="2019">
+          <div class="post-contents">
+
+            <div class="post-image-container">
+              <img src="https://www.bitdegree.org/tutorials/wp-content/uploads/2018/08/what-is-a-web-developer.jpg" alt="Super nice laptop">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Group Meeting</a> <span class="post-month"> - December </span> <span class="post-day">2, </span> <span class="post-year">2019</span>
+            </div>
+
+            <div class="post-interaction-container">
+              <!--Name: Going/Interested/No -->
+              <div class="post-input-element">
+                <input type="text" name="interaction-name" id="interaction-name" class="filter-input" placeholder="Name">
+              </div>
+              <div class="post-input-element">
+                <select id="interaction-interest" class="filter-input" name="interaction-interest">
+                  <option>Going</option>
+                  <option>Interested</option>
+                  <option>Not Going</option>
+                </select>
+              </div>
+              <button id="interest-update-button" class="action-button">Submit</button>
+            </div>
+            <a href="#" class="reservation-list">- see who else is going -</a>
+          </div>
+        </div>
+
+        <!-- New Post -->
+        <div class="post" data-month="June" data-day="15" data-year="2021">
+          <div class="post-contents">
+
+            <div class="post-image-container">
+              <img src="https://assets.pcmag.com/media/images/582950-grad-gift-guide.jpg?thumb=y&width=412&height=412&boxFit=y" alt="Super nice laptop">
+            </div>
+            <div class="post-info-container">
+              <a href="#" class="post-title">Graduation Party</a> <span class="post-month"> - June </span> <span class="post-day">15, </span> <span class="post-year">2021</span>
+            </div>
+
+            <div class="post-interaction-container">
+              <!--Name: Going/Interested/No -->
+              <div class="post-input-element">
+                <input type="text" name="interaction-name" id="interaction-name" class="filter-input" placeholder="Name">
+              </div>
+              <div class="post-input-element">
+                <select id="interaction-interest" class="filter-input" name="interaction-interest">
+                  <option>Going</option>
+                  <option>Interested</option>
+                  <option>Not Going</option>
+                </select>
+              </div>
+              <button id="interest-update-button" class="action-button">Submit</button>
+            </div>
+            <a href="#" class="reservation-list">- see who else is going -</a>
           </div>
         </div>
 
