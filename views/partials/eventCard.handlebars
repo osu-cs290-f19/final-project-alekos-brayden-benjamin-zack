@@ -1,0 +1,27 @@
+<div class="post" data-month="{{month}}" data-day="{{day}}" data-year="{{year}}">
+  <div class="post-contents">
+
+    <div class="post-image-container">
+      <img src="{{url}}" alt="{{title}}">
+    </div>
+    <div class="post-info-container">
+      <a href="#" class="post-title">{{title}}</a> <span class="post-month"> - {{month}} </span> <span class="post-day">{{day}}, </span> <span class="post-year">{{year}}</span>
+    </div>
+
+    <div class="post-interaction-container">
+      <!--Name: Going/Interested/No -->
+      <div class="post-input-element">
+        <input type="text" name="interaction-name" id="interaction-name" class="filter-input" placeholder="Name">
+      </div>
+      <div class="post-input-element">
+        <select id="interaction-interest" class="filter-input" name="interaction-interest">
+          <option>Going</option>
+          <option>Interested</option>
+          <option>Not Going</option>
+        </select>
+      </div>
+      <button id="interest-update-button" class="action-button">Submit</button>
+    </div>
+    <a href="#" class="reservation-list">- see who else is going -</a>
+  </div>
+</div>

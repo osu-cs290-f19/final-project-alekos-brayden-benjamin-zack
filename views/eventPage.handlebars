@@ -1,0 +1,66 @@
+<section id="add-container">
+  <h2>Create Your Own Event!</h2>
+  <button type="button" id="add-something-button" class="action-button">Create Event</button>
+</section>
+
+
+  <!-- End Add Event -->
+
+  <section id="posts">
+
+    {{#each events}}
+        {{> eventCard}}
+    {{/each}}
+
+  </section>
+
+  <!-- End Posts -->
+
+
+<!-- This is present at bottom add hidden in CSS unless add-something-button is pressed -->
+
+<div id="modal-backdrop" class="hidden"></div>
+<div id="add-something-modal" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Create a new event!</h3>
+      <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+      <div class="post-input-element">
+        <label for="post-text-input">Item description</label>
+        <input type="text" id="post-text-input"></input>
+      </div>
+
+      <div class="post-input-element">
+        <label for="post-photo-input">Photo URL</label>
+        <input type="text" id="post-photo-input">
+      </div>
+
+      <div class="post-input-element">
+        <label for="post-month-input">Event Month</label>
+        <input type="text" id="post-text-input"></input>
+      </div>
+
+      <div class="post-input-element">
+        <label for="post-day-input">Event Day</label>
+        <input type="number" id="post-price-input">
+      </div>
+
+      <div class="post-input-element">
+        <label for="post-year-input">Event Year</label>
+        <input type="number" id="post-price-input">
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+      <button type="button" id="modal-accept" class="action-button">Create Event</button>
+    </div>
+
+  </div>
+</div>

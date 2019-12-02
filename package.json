@@ -1,0 +1,27 @@
+{
+  "name": "alekos-brayden-benjamin-zack",
+  "version": "1.0.0",
+  "description": "Final Project",
+  "main": "finalproject.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "handlebars views/partials/eventCard.handlebars -f public/eventCardTemplate.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-f19/final-project-alekos-brayden-benjamin-zack.git"
+  },
+  "author": "Alekos, Brayden, Benjamin, Zack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-f19/final-project-alekos-brayden-benjamin-zack/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-f19/final-project-alekos-brayden-benjamin-zack#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
+  }
+}
