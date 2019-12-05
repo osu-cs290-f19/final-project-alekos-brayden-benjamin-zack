@@ -28,61 +28,74 @@ prevButton.addEventListener('click', getPrevMonth);
 function getEachDay() {
   var newMonth = months[month] + " - " + year;
 
-  var monthHTML = Handlebars.templates.calendar({
-     currentMonth: newMonth
-   });
+  //var monthHTML = Handlebars.templates.calendar({
+    // currentMonth: newMonth
+   //});
+  var handleMonth = document.getElementById('this-month');
+  handleMonth.innerHTML = newMonth;
+  /////////////////////
 
-   var handleMonth = document.getElementById('this-month');
-   handleMonth.innerHTML = monthHTML;
-  /*document.getElementById("this-month").innerHTML =  months[month] +" - "+ year;
+  ////////////////////
+
   var totalDays = days[month];
   var tmpDate = new Date(year, month, 1);
   console.log("Creating Calendar");
   var k = tmpDate.getDay(); //gets the day the month starts on
   var dayNum = 1;
   totalDays += k;
+  var postInfo;
   console.log("Our day:", originalDay);
   for(var i = 0; i < totalDays; i++) {
-    var newContainer = document.createElement("div");   //create a partial for this eventually
-    var newDiv = document.createElement("div");
-    var newPostSection = document.createElement("div");
     if(i >= k) {  //if days have started for that month(i.e to get right day)
+      postInfo = " ";
+      postInfo = createEvent(dayNum, month, year, postInfo);
+      var eventHTML = Handlebars.templates.calendarCard({
+           dayNum: dayNum,
+           postInfo: postInfo
+      });
 
-      newDiv.innerHTML = dayNum;
-      newPostSection.innerHTML = hoe;
-      //createEvent(dayNum, newPostSection);
+      var handlePosts = document.getElementById('get-day');
+      handlePosts.insertAdjacentHTML('beforeend', eventHTML);
+      //createEvent();
       if(dayNum-1 == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
-        newDiv.style.backgroundColor = "red";
-        newDiv.style.borderBottom = "2px solid black";  //if our current day slightly change the style
+        var currentDayContainer = document.getElementsByClassName("days");
+        currentDayContainer[dayNum-1].style.backgroundColor = "red";
+        currentDayContainer[dayNum-1].style.borderBottom = "2px solid black";
+
       }
       dayNum++;
     }
     else {
-      newDiv.innerHTML = "-";
+      var eventHTML = Handlebars.templates.calendarCard({
+           dayNum: " - ",
+           postInfo: " "
+      });
+
+      var handlePosts = document.getElementById('get-day');
+      handlePosts.insertAdjacentHTML('beforeend', eventHTML);
     }
-    newContainer.className = "day-container";
-    newDiv.className = "days";
-    newPostSection.className = "posts";
-    newContainer.appendChild(newDiv);
-    newContainer.appendChild(newPostSection);
-    ////////////////////////
-    document.getElementById("get-day").appendChild(newContainer);
-  }*/
+  }
 }
 
-/*function createEvent(dayNum, newPostSection) {
-  if(dayNum >= 16 && month == 11 && year == 2019) { //just threw some random days to test
-    var button = document.createElement("button");
-    button.innerHTML = "Do Something";
-    button.id = 'view-event-button';
-    button.className = "view-event-button";
-    newPostSection.appendChild(button);
+function createEvent(day, month, year, postInfo) {
+  var getEvents = document.getElementsByClassName("post");
+
+  for(var i = 0; i < getEvents.length; i++) {
+    var ourT = getEvents[i].getAttribute('data-title');
+    var ourMonth = getEvents[i].getAttribute('data-month');
+    var ourDay = getEvents[i].getAttribute('data-day');
+    var ourYear = getEvents[i].getAttribute('data-year');
+    if(ourDay == day && ourYear == year) {
+      postInfo = ourT;
+      console.log("This is our title:", ourT);
+    }
   }
-  var buttonListener = document.getElementsByClassName("view-event-button");
+  return postInfo;
+  /*var buttonListener = document.getElementsByClassName("view-event-button");
   for(var i = 0; i < buttonListener.length; i++) {
     buttonListener[i].addEventListener('click', getEvents);
-  }
-}*/
+  }*/
+}
 
 function getNextMonth () {
   deleteLastMonth();
