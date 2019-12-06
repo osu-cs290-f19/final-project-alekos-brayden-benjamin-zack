@@ -51,6 +51,7 @@ header a {
 
 #add-container {
   padding: 10px;
+  padding-top: 40px;
   background-color: #7CD69F;
   align-items: center;
   color: white;
