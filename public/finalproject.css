@@ -51,7 +51,7 @@ header a {
 
 #add-container {
   padding: 10px;
-  background-color: #039BE5;
+  background-color: white;
   align-items: center;
   color: white;
   text-align: center;
@@ -281,7 +281,7 @@ header a {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   grid-gap: 10px;
-  background-color: grey;
+  background-color: #3C7BEB;
   padding: 10px;
   text-align: center;
   font-size:20px;
