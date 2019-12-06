@@ -85,7 +85,7 @@ function createEvent(day, month, year, postInfo) {
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      var temp = ourT + "(" + ourTime + ")";
+      var temp = ourT + " (" + ourTime + ")";
       postInfo = temp;
     }
 

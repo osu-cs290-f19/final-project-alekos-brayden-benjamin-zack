@@ -262,6 +262,13 @@ header a {
   border: 1px solid #aaa;
 }
 
+.post-input-element select {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+}
+
 .post-fieldset {
   flex: 1 100%;
   border: 1px solid #ababab;
