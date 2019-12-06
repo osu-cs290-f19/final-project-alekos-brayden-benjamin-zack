@@ -245,7 +245,7 @@ for (var i = 0; i < modalHideButtons.length; i++) {
 ****************************************/
 
 function listEvents() {
-  
+  alert('Button Pressed!');
 }
 
 var listEventsButton = document.getElementById('list-events-button');

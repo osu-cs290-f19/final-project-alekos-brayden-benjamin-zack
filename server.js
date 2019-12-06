@@ -17,6 +17,11 @@ app.get('/', function (req, res, next) {
   res.render('eventPage', { events: eventData });
 });
 
+app.get('/listEvents', function (req, res, next) {
+  res.statusCode = 200;
+  res.render('listEvents', { events: eventData });
+});
+
 app.get('*', function (req, res) {
   res.statusCode = 404;
   res.render('404');
