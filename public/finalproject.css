@@ -339,16 +339,14 @@ header a {
 }
 
 #prev-month-button {
-  background-color: white;
-  /* border: 1px solid white; */
+  background-color: black;
   border-radius: 50px;
   color: white;
   margin: 20px;
 }
 
 #next-month-button {
-  background-color: white;
-  /* border: 1px solid white; */
+  background-color: black;
   border-radius: 50px;
   color: white;
   margin: 20px;
