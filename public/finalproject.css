@@ -35,6 +35,23 @@ header a {
 }
 
 
+/****************404***************/
+.error-container {
+  text-align: center;
+}
+
+.error-container h2 {
+  font-size: 100px;
+  margin: 20px 10px 10px 10px;
+}
+
+.error-container h3 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+/*************end*404**************/
+
 /**********************************/
 
 .site-title {
