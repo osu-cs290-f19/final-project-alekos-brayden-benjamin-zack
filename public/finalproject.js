@@ -80,12 +80,13 @@ function createEvent(day, month, year, postInfo) {
   for(var i = 0; i < getEvents.length; i++) {
     getEvents[i].style.display = 'none';
     var ourT = getEvents[i].getAttribute('data-title');
+    var ourTime = getEvents[i].getAttribute('data-time');
     var ourMonth = getEvents[i].getAttribute('data-month');
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      postInfo = ourT;
-      console.log("This is our title:", ourT);
+      var temp = ourT + "(" + ourTime + ")";
+      postInfo = temp;
     }
 
   }
