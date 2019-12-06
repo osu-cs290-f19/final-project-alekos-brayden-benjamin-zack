@@ -6,7 +6,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #7B0100;
+  color: black;
 }
 
 a:hover {
@@ -85,10 +85,10 @@ header a {
 
 .action-button {
   font-size: 20px;
-  color: white;
+  color: black;
   padding: 10px;
-  background-color: #585858;
-  border: 1px solid #7B0100;
+  background-color: #BDFFFF;
+  border: 1.5px solid black;
   border-radius: 5px;
   font-weight: lighter;
   cursor: pointer;
@@ -96,9 +96,9 @@ header a {
 }
 
 .action-button:hover {
-  background-color: #7B0100;
+  background-color: rgb(252, 253, 73);
   border-color: black;
-  color: white;
+  color: black;
 }
 
 .post {
@@ -108,9 +108,9 @@ header a {
   width: 400px;
   margin: 20px;
   padding: 20px;
-  border: 1px solid #7B0100;
+  border: 1.5px solid black;
   border-radius: 3px;
-  background-color: lightgrey;
+  background-color: #3C7BEB;
 }
 
 
@@ -136,7 +136,7 @@ header a {
 
 .post-interaction-container {
   display: inline-block;
-  border: 1px solid #7B0100;
+  border: 1.5px solid black;
   border-radius: 3px;
   margin: 20px;
   padding-right: 10px;
