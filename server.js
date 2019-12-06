@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 app.get('/', function (req, res, next) {
   res.statusCode = 200;
-  res.render('eventPage', { events: eventData });
+  res.render('eventPage');
 });
 
 app.get('*', function (req, res) {

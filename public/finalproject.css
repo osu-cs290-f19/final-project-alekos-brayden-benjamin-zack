@@ -1,7 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: grey;
+  background-color: #7CD69F;
 }
 
 a {
@@ -321,7 +321,7 @@ header a {
 }
 
 .day-name {
-  background-color: black;
+  background-color: #BDFFFF;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(7, 2fr);
@@ -330,7 +330,7 @@ header a {
 }
 
 .day-label {
-  background-color: red;
+  background-color: #FF5D5D;
   text-align: center;
   border: 1px solid black;
 }
