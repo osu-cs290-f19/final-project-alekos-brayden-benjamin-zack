@@ -137,3 +137,97 @@ function deleteLastMonth() {
 /****************************************
 **************** End Calendar ***********
 ****************************************/
+
+// function insertNewEvent(description, photoURL, time, title) {
+//
+//     var postObj = {
+//         description: description,
+//         photoURL: photoURL,
+//         time: time,
+//         title: title
+//     }
+//
+//     var postCardHTML = Handlebars.templates.postCard(postObj);
+//     var postContainer = document.getElementById('posts');
+//     postContainer.insertAdjacentHTML('beforeend', postCardHTML);
+// }
+
+function handleModalAcceptClick() {
+
+  var title = document.getElementById('event-title-input').value.trim();
+  var photoURL = document.getElementById('event-photo-input').value.trim();
+  var description = document.getElementById('event-description-input').value.trim();
+  var time = document.getElementById('event-time-input').value.trim();
+  var day = document.getElementById('event-day-input').value.trim();
+  var month = document.getElementById('event-month-input').value.trim();
+
+  if (!description || !photoURL || !title || !day || !month || !time) {
+    alert("You must fill in all of the fields!");
+  } else {
+
+    hideAddEventModal();
+
+  }
+
+}
+
+function showAddEventModal() {
+
+  var showSomethingModal = document.getElementById('add-event-modal');
+  var modalBackdrop = document.getElementById('modal-backdrop');
+
+  showSomethingModal.classList.remove('hidden');
+  modalBackdrop.classList.remove('hidden');
+
+}
+
+function clearAddEventModalInputs() {
+
+  var postTextInputElements = [
+    document.getElementById('post-text-input'),
+    document.getElementById('post-photo-input'),
+    document.getElementById('post-price-input'),
+    document.getElementById('post-city-input')
+  ];
+
+  /*
+   * Clear any text entered in the text inputs.
+   */
+  postTextInputElements.forEach(function (inputElem) {
+    inputElem.value = '';
+  });
+
+  /*
+   * Grab the originally checked radio button and make sure it's checked.
+   */
+  var checkedPostConditionButton = document.querySelector('#post-condition-fieldset input[checked]');
+  checkedPostConditionButton.checked = true;
+
+}
+
+function hideAddEventModal() {
+
+  var showSomethingModal = document.getElementById('add-event-modal');
+  var modalBackdrop = document.getElementById('modal-backdrop');
+
+  showSomethingModal.classList.add('hidden');
+  modalBackdrop.classList.add('hidden');
+
+  clearAddEventModalInputs();
+
+}
+
+var addEventButton = document.getElementById('add-event-button');
+if (addEventButton) {
+  addEventButton.addEventListener('click', showAddEventModal);
+}
+
+var modalAcceptButton = document.getElementById('modal-accept');
+if (modalAcceptButton) {
+  modalAcceptButton.addEventListener('click', handleModalAcceptClick);
+}
+
+var modalHideButtons = document.getElementsByClassName('modal-hide-button');
+for (var i = 0; i < modalHideButtons.length; i++) {
+  modalHideButtons[i].addEventListener('click', hideAddEventModal);
+}

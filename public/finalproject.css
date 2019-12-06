@@ -164,7 +164,7 @@ header a {
  * Modal stuff - From bennys list don't know if popup for create event or have it already there
  */
 
-#modal-backdrop {
+/* #modal-backdrop {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -172,11 +172,11 @@ header a {
   right: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.85);
-}
+} */
 
-#sell-something-modal {
+#add-event-modal {
   position: fixed;
-  top: 0;
+  top: 100px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -201,6 +201,7 @@ header a {
 .modal-header {
   position: relative;
   padding: 10px 20px;
+  background-color: #B9B9BB;
 }
 
 .modal-header h3 {
@@ -221,6 +222,7 @@ header a {
 
 .modal-body {
   padding: 20px;
+  background-color: #B9B9BB;
 }
 
 .post-input-element {
@@ -252,6 +254,7 @@ header a {
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 20px 10px;
+  background-color: #B9B9BB;
 }
 
 #modal-cancel,
