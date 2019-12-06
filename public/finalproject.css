@@ -182,8 +182,6 @@ header a {
   right: 0;
   z-index: 1010;
   overflow: scroll;
-  border: 2px solid black;
-  border-radius: 0px;
 }
 
 .hidden {
@@ -203,6 +201,7 @@ header a {
 .modal-header {
   position: relative;
   padding: 10px 20px;
+  background-color: #B9B9BB;
 }
 
 .modal-header h3 {
@@ -223,6 +222,7 @@ header a {
 
 .modal-body {
   padding: 20px;
+  background-color: #B9B9BB;
 }
 
 .post-input-element {
@@ -254,6 +254,7 @@ header a {
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 20px 10px;
+  background-color: #B9B9BB;
 }
 
 #modal-cancel,
