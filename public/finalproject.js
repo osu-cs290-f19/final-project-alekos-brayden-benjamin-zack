@@ -59,7 +59,7 @@ function getEachDay() {
       //createEvent();
       if(dayNum-1 == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
         var currentDayContainer = document.getElementsByClassName("days");
-        currentDayContainer[dayNum-1].style.backgroundColor = "red";
+        currentDayContainer[dayNum-1].style.backgroundColor = "#FCFD49";
         currentDayContainer[dayNum-1].style.borderBottom = "2px solid black";
 
       }
