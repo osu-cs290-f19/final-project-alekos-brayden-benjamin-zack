@@ -339,20 +339,21 @@ header a {
 }
 
 #prev-month-button {
-  background-color: black;
-  border: 1px solid white;
+  background-color: white;
+  /* border: 1px solid white; */
   border-radius: 50px;
   color: white;
   margin: 20px;
-
+  width: 50px;
 }
 
 #next-month-button {
-  background-color: black;
-  border: 1px solid white;
+  background-color: white;
+  /* border: 1px solid white; */
   border-radius: 50px;
   color: white;
   margin: 20px;
+  width: 50px;
 }
 /****************************************
 **************** End Calendar ***********
