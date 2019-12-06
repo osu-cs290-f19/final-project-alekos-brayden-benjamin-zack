@@ -51,7 +51,7 @@ header a {
 
 #add-container {
   padding: 10px;
-  background-color: white;
+  background-color: #7CD69F;
   align-items: center;
   color: white;
   text-align: center;
@@ -272,6 +272,7 @@ header a {
 **************** Calendar ***************
 ****************************************/
 .calendar {
+  background-color: white;
   border: 3px solid black;
   border-radius: 5px;
   margin: 20px;
