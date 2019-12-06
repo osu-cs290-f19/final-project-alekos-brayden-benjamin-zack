@@ -331,10 +331,11 @@ header a {
 
 .day-label {
   background-color: #FF5D5D;
+  border: 2px solid black;
   text-align: center;
-  border: 3px solid black;
   border-radius: 5px;
   padding: 5px;
+  font-weight: 600;
 }
 
 #prev-month-button {
