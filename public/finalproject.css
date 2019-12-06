@@ -341,14 +341,13 @@ header a {
 #prev-month-button {
   background-color: #3C7BEB;
   border: 0px;
-  /* border-radius: 50px; */
   color: white;
   margin: 20px;
 }
 
 #next-month-button {
-  background-color: black;
-  border-radius: 50px;
+  background-color: #3C7BEB;
+  border: 0px;
   color: white;
   margin: 20px;
 }
