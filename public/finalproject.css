@@ -182,7 +182,8 @@ header a {
   right: 0;
   z-index: 1010;
   overflow: scroll;
-  border-radius: 4px;
+  border: 2px solid black;
+  border-radius: 0px;
 }
 
 .hidden {
