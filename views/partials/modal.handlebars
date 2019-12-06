@@ -26,18 +26,36 @@
 
       <div class="post-input-element">
         <label for="event-time-input">Time</label>
-        <input type="number" id="event-time-input">
+        <input type="time" id="event-time-input" min="00:00" max="23:59">
       </div>
 
       <div class="post-input-element">
         <label for="event-day-input">Day</label>
-        <input type="text" id="event-day-input">
+        <input type="number" id="event-day-input" min="1" max="31">
       </div>
 
       <div class="post-input-element">
         <label for="event-month-input">Month</label>
-        <input type="text" id="event-month-input">
+          <select id="event-month-input">
+            <option selected value="">January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
       </div>
+
+      <!-- <div class="post-input-element">
+        <label for="event-month-input">Month</label>
+        <input type="text" id="event-month-input">
+      </div> -->
 
 
     </div>

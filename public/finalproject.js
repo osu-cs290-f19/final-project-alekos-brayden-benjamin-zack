@@ -153,6 +153,10 @@ function deleteLastMonth() {
 //     postContainer.insertAdjacentHTML('beforeend', postCardHTML);
 // }
 
+/****************************************
+**************** Modal ******************
+****************************************/
+
 function handleModalAcceptClick() {
 
   var title = document.getElementById('event-title-input').value.trim();
@@ -232,3 +236,7 @@ var modalHideButtons = document.getElementsByClassName('modal-hide-button');
 for (var i = 0; i < modalHideButtons.length; i++) {
   modalHideButtons[i].addEventListener('click', hideAddEventModal);
 }
+
+/****************************************
+**************** End Modal **************
+****************************************/
