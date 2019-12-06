@@ -164,7 +164,7 @@ header a {
  * Modal stuff - From bennys list don't know if popup for create event or have it already there
  */
 
-#modal-backdrop {
+/* #modal-backdrop {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -172,16 +172,17 @@ header a {
   right: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.85);
-}
+} */
 
 #add-event-modal {
   position: fixed;
-  top: 0;
+  top: 100px;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1010;
   overflow: scroll;
+  border-radius: 4px;
 }
 
 .hidden {
