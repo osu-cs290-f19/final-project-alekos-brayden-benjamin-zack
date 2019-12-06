@@ -344,7 +344,6 @@ header a {
   border-radius: 50px;
   color: white;
   margin: 20px;
-  width: 50px;
 }
 
 #next-month-button {
@@ -353,7 +352,6 @@ header a {
   border-radius: 50px;
   color: white;
   margin: 20px;
-  width: 50px;
 }
 /****************************************
 **************** End Calendar ***********
