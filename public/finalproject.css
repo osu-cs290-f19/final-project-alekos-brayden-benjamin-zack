@@ -15,7 +15,7 @@ a:hover {
 
 header {
   display: flex;
-  background-color: black;
+  background-color: #3C7BEB;
   text-align: left;
   border-bottom: 2px solid #7B0100;
   padding: 10px;
@@ -51,7 +51,7 @@ header a {
 
 #add-container {
   padding: 10px;
-  background-color: #424242;
+  background-color: #039BE5;
   align-items: center;
   color: white;
   text-align: center;
