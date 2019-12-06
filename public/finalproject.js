@@ -86,9 +86,10 @@ function createEvent(day, month, year, postInfo) {
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourYear == year) {
-      postInfo = ourT;
+      postInfo = "hello";//ourT;
       console.log("This is our title:", ourT);
     }
+  
   }
   return postInfo;
   /*var buttonListener = document.getElementsByClassName("view-event-button");
