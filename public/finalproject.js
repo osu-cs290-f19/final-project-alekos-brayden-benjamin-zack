@@ -1,7 +1,7 @@
 /****************************************
 **************** Calendar ***************
 ****************************************/
-var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 var date = new Date();
@@ -19,12 +19,7 @@ var prevButton = document.getElementById("prev-month-button");
 
 nextButton.addEventListener('click', getNextMonth);
 prevButton.addEventListener('click', getPrevMonth);
-//getPrevMonth ();
 
-
-//function getEvents() {
-  //console.log("Registered Button click");
-//}
 function getEachDay() {
   var newMonth = months[month] + " - " + year;
 
@@ -80,15 +75,19 @@ function getEachDay() {
 function createEvent(day, month, year, postInfo) {
   var getEvents = document.getElementsByClassName("post");
 
+    ///////////////////
+    //////////////////
   for(var i = 0; i < getEvents.length; i++) {
+    getEvents[i].style.display = 'none';
     var ourT = getEvents[i].getAttribute('data-title');
     var ourMonth = getEvents[i].getAttribute('data-month');
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
-    if(ourDay == day && ourYear == year) {
+    if(ourDay == day && ourMonth == months[month] && ourYear == year) {
       postInfo = ourT;
       console.log("This is our title:", ourT);
     }
+
   }
   return postInfo;
   /*var buttonListener = document.getElementsByClassName("view-event-button");
