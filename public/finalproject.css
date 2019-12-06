@@ -352,6 +352,19 @@ header a {
   color: white;
   margin: 20px;
 }
+
+.add-container-option {
+    padding-left: 100px;
+    padding-right: 100px;
+    color: black;
+    font-weight: 600;
+}
+
+.add-container-option:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: red;
+}
 /****************************************
 **************** End Calendar ***********
 ****************************************/
