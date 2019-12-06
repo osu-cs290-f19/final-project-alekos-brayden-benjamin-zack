@@ -2,15 +2,19 @@
     {
         "month": "January",
         "day": 12,
-        "year": 2019,
+        "year": 2020,
         "title": "Laptop Parade",
+        "description": "Be sure to come for this sick laptop parade!",
+        "time": "12:00 AM",
         "url": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg"
     },
     {
         "month": "December",
         "day": 20,
         "year": 2019,
-        "title": "Star Wars Marathon",
+        "title": "Star Wars Movie",
+        "description": "Come hang out and binge the original trilogy!",
+        "time": "10:00 PM",
         "url": "https://i.ytimg.com/vi/mRzLJcbUVek/maxresdefault.jpg"
     },
     {
@@ -18,6 +22,8 @@
         "day": 9,
         "year": 2020,
         "title": "Hotdog Eating Contest",
+        "description": "Come down win this contest!",
+        "time": "3:00 PM",
         "url": "https://brooklynreporter.com/wp-content/uploads/2019/07/Corazon_Hot_Dog_Eating_Contest_DSC_3341-1024x683.jpg"
     },
     {
@@ -25,13 +31,17 @@
         "day": 2,
         "year": 2019,
         "title": "Group Meeting",
+        "description": "Group meeting tonight, working on final project",
+        "time": "6:00 PM",
         "url": "https://www.bitdegree.org/tutorials/wp-content/uploads/2018/08/what-is-a-web-developer.jpg"
     },
     {
         "month": "June",
         "day": 15,
-        "year": 2021,
+        "year": 2020,
         "title": "Graduation Party",
+        "description": "Somehow I graduated so uhm come hang",
+        "time": "2:00 PM",
         "url": "https://assets.pcmag.com/media/images/582950-grad-gift-guide.jpg?thumb=y&width=412&height=412&boxFit=y"
     }
 ]
