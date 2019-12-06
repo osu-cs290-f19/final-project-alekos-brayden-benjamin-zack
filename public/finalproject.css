@@ -289,7 +289,7 @@ header a {
 }
 
 .get-day {
-  background-color: white;
+  background-color: #3C7BEB;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(7, 2fr);
@@ -321,7 +321,7 @@ header a {
 }
 
 .day-name {
-  background-color: #BDFFFF;
+  background-color: #3C7BEB;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(7, 2fr);
