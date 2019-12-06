@@ -17,7 +17,7 @@ header {
   display: flex;
   background-color: #3C7BEB;
   text-align: left;
-  border-bottom: 2px solid #7B0100;
+  /* border-bottom: 2px solid #7B0100; */
   padding: 10px;
 }
 
@@ -55,7 +55,7 @@ header a {
   align-items: center;
   color: white;
   text-align: center;
-  border-bottom: 2px solid #7B0100;
+  /* border-bottom: 2px solid #7B0100; */
 }
 
 
