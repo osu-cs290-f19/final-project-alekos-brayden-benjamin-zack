@@ -229,5 +229,5 @@ if (modalAcceptButton) {
 
 var modalHideButtons = document.getElementsByClassName('modal-hide-button');
 for (var i = 0; i < modalHideButtons.length; i++) {
-  modalHideButtons[i].addEventListener('click', hideSellSomethingModal);
+  modalHideButtons[i].addEventListener('click', hideAddEventModal);
 }
