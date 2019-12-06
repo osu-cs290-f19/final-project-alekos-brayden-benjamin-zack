@@ -239,3 +239,20 @@ for (var i = 0; i < modalHideButtons.length; i++) {
 /****************************************
 **************** End Modal **************
 ****************************************/
+
+/****************************************
+*************** List Events *************
+****************************************/
+
+function listEvents() {
+  
+}
+
+var listEventsButton = document.getElementById('list-events-button');
+if (listEventsButton) {
+  listEventsButton.addEventListener('click', listEvents);
+}
+
+/****************************************
+************* End List Events ***********
+****************************************/
