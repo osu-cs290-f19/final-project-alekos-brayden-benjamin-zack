@@ -1,6 +1,8 @@
 var path = require('path');
+var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var bosyParser = require('body-parser');
 
 var eventData = require('./eventData.json');
 
@@ -20,6 +22,19 @@ app.get('/', function (req, res, next) {
 app.get('/listEvents', function (req, res, next) {
   res.statusCode = 200;
   res.render('listEvents', { events: eventData });
+});
+
+app.post('/addEvent', function (req, res, next) {
+  // console.log(req.body);
+  // fs.writeFile(__dirname + '/eventData.json', JSON.stringify(eventData), function(err){
+  //   if(!err){
+  //     res.status(200).send();
+  //   }
+  //   else{
+  //     res.status(500).send('Fail to write to json');
+  //   }
+  // });
+  // // res.render('eventPage', { events: req.body });
 });
 
 app.get('*', function (req, res) {

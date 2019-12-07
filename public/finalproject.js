@@ -138,23 +138,23 @@ function deleteLastMonth() {
 **************** End Calendar ***********
 ****************************************/
 
-// function insertNewEvent(description, photoURL, time, title) {
-//
-//     var postObj = {
-//         description: description,
-//         photoURL: photoURL,
-//         time: time,
-//         title: title
-//     }
-//
-//     var postCardHTML = Handlebars.templates.postCard(postObj);
-//     var postContainer = document.getElementById('posts');
-//     postContainer.insertAdjacentHTML('beforeend', postCardHTML);
-// }
-
 /****************************************
 **************** Modal ******************
 ****************************************/
+
+// function insertNewEvent(description, photoURL, time, title) {
+//
+//   var postObj = {
+//       description: description,
+//       photoURL: photoURL,
+//       time: time,
+//       title: title
+//   }
+//
+//   var postCardHTML = Handlebars.templates.postCard(postObj);
+//   var postContainer = document.getElementById('posts');
+//   postContainer.insertAdjacentHTML('beforeend', postCardHTML);
+// }
 
 function handleModalAcceptClick() {
 
@@ -164,10 +164,32 @@ function handleModalAcceptClick() {
   var time = document.getElementById('event-time-input').value.trim();
   var day = document.getElementById('event-day-input').value.trim();
   var month = document.getElementById('event-month-input').value.trim();
+  var year = document.getElementById('event-year-input').value.trim();
 
-  if (!description || !photoURL || !title || !day || !month || !time) {
+  if (!description || !photoURL || !title || !day || !month || !time || !year) {
     alert("You must fill in all of the fields!");
   } else {
+    // var postReq = new XMLHttpRequest();
+    //
+    // postReq.open('POST', '/addEvent');
+    //
+    // var reqBody = JSON.stringify({
+    //   title: title,
+    //   photoURL: photoURL,
+    //   description: description,
+    //   time: time,
+    //   day: day,
+    //   month: month,
+    //   year: year
+    // });
+    //
+    // postReq.setRequestHeader('Content-Type', 'application/json');
+    // postReq.send(reqBody);
+    //
+    // postReq.addEventListener('load', function(event){
+    //   alert('loaded information');
+    //   // insertNewEvent(description, photoURL, time, title);
+    // });
 
     hideAddEventModal();
 
