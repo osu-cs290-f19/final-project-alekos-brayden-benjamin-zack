@@ -208,7 +208,13 @@ function showAddEventModal() {
 }
 
 function clearAddEventModalInputs() {
-
+  /*
+  * Initialized variables for each input in the modal
+  var modalText = document.getElementById('post-text-input');
+  var modalURL = document.getElementById('post-photo-input');
+  var modalPrice = document.getElementById('post-price-input');
+  var modalCity = document.getElementById('post-city-input');
+  */
   var postTextInputElements = [
     document.getElementById('post-text-input'),
     document.getElementById('post-photo-input'),
@@ -221,8 +227,16 @@ function clearAddEventModalInputs() {
    */
   postTextInputElements.forEach(function (inputElem) {
     inputElem.value = '';
-  });
-
+    });
+    /*
+    * Attempt at trying to clear the modal screen when cancel is clicked
+modalCancel.onclick = function(){
+  modalText.value = "";
+  modalURL.value = "";
+  modalPrice.value = "";
+  modalCity.value = "";
+}
+*/
   /*
    * Grab the originally checked radio button and make sure it's checked.
    */
