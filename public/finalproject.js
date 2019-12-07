@@ -13,12 +13,15 @@ var originalDay = day;
 var originalMonth = month;
 var originalYear = year;
 
-getEachDay();
-var nextButton = document.getElementById("next-month-button");
-var prevButton = document.getElementById("prev-month-button");
+if (window.location.pathname == '/') { //only run the calendar if homepage
+  //otherwise in events page it will try to run it but cant access it
+  getEachDay();
+  var nextButton = document.getElementById("next-month-button");
+  var prevButton = document.getElementById("prev-month-button");
 
-nextButton.addEventListener('click', getNextMonth);
-prevButton.addEventListener('click', getPrevMonth);
+  nextButton.addEventListener('click', getNextMonth);
+  prevButton.addEventListener('click', getPrevMonth);
+}
 
 function getEachDay() {
   var newMonth = months[month] + " - " + year;
@@ -27,6 +30,7 @@ function getEachDay() {
     // currentMonth: newMonth
    //});
   var handleMonth = document.getElementById('this-month');
+
   handleMonth.innerHTML = newMonth;
   /////////////////////
 
@@ -281,7 +285,7 @@ for (var i = 0; i < modalHideButtons.length; i++) {
 ****************************************/
 
 function listEvents() {
-  // alert('Button Pressed!');
+  //alert('Button Pressed!');
 }
 
 var listEventsButton = document.getElementById('list-events-button');
