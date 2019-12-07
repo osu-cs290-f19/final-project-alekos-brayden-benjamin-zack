@@ -212,14 +212,18 @@ header a {
   min-width: 350px;
   min-height: 300px;
   margin: 40px auto;
-  background-color: #fff;
+  border: 3px solid black;
   border-radius: 15px;
+  box-shadow: 0px 0px 10px black;
 }
 
 .modal-header {
   position: relative;
   padding: 10px 20px;
-  background-color: #B9B9BB;
+  background-color: #7CD69F;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
 }
 
 .modal-header h3 {
@@ -240,7 +244,7 @@ header a {
 
 .modal-body {
   padding: 20px;
-  background-color: #B9B9BB;
+  background-color: #3C7BEB;
 }
 
 .post-input-element {
@@ -254,6 +258,7 @@ header a {
   font-weight: 600;
   flex: 1 75px;
   margin-right: 10px;
+  color: white;
 }
 
 .post-input-element input {
@@ -279,7 +284,9 @@ header a {
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 20px 10px;
-  background-color: #B9B9BB;
+  background-color: #3C7BEB;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #modal-cancel,
