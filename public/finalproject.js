@@ -162,6 +162,17 @@ function deleteLastMonth() {
 //   postContainer.insertAdjacentHTML('beforeend', postCardHTML);
 // }
 
+function to12hr(time){
+  var ampm;
+  if(time.slice(0,2)>12){
+    ampm = "PM";
+  }
+  else{
+    ampm = "AM";
+  }
+  return ((time.slice(0,2))%12).toString() + ':' + time.slice(3,5).toString() + ' ' + ampm;
+}
+
 function handleModalAcceptClick() {
 
   var addTitle = document.getElementById('event-title-input').value.trim();
@@ -175,6 +186,7 @@ function handleModalAcceptClick() {
   if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
     alert("You must fill in all of the fields!");
   } else {
+    addTime = to12hr(addTime);
     var eventHTML = Handlebars.templates.eventCard({ //first create handle bars thing for all areas, then store in postHTML
      description: addDescription,
      photoURL: addPhotoURL,
