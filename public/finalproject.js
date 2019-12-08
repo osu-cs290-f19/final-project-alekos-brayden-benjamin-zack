@@ -101,10 +101,6 @@ function createEvent(day, month, year, postInfo) {
 
   }
   return postInfo;
-  /*var buttonListener = document.getElementsByClassName("view-event-button");
-  for(var i = 0; i < buttonListener.length; i++) {
-    buttonListener[i].addEventListener('click', getEvents);
-  }*/
 }
 
 function getNextMonth () {
@@ -168,17 +164,31 @@ function deleteLastMonth() {
 
 function handleModalAcceptClick() {
 
-  var title = document.getElementById('event-title-input').value.trim();
-  var photoURL = document.getElementById('event-photo-input').value.trim();
-  var description = document.getElementById('event-description-input').value.trim();
-  var time = document.getElementById('event-time-input').value.trim();
-  var day = document.getElementById('event-day-input').value.trim();
-  var month = document.getElementById('event-month-input').value.trim();
-  var year = document.getElementById('event-year-input').value.trim();
+  var addTitle = document.getElementById('event-title-input').value.trim();
+  var addPhotoURL = document.getElementById('event-photo-input').value.trim();
+  var addDescription = document.getElementById('event-description-input').value.trim();
+  var addTime = document.getElementById('event-time-input').value.trim();
+  var addDay = document.getElementById('event-day-input').value.trim();
+  var addMonth = document.getElementById('event-month-input').value.trim();
+  var addYear = document.getElementById('event-year-input').value.trim();
 
-  if (!description || !photoURL || !title || !day || !month || !time || !year) {
+  if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
     alert("You must fill in all of the fields!");
   } else {
+    var eventHTML = Handlebars.templates.eventCard({ //first create handle bars thing for all areas, then store in postHTML
+     description: addDescription,
+     photoURL: addPhotoURL,
+     title: addTitle,
+     day: addDay,
+     month: addMonth,
+     time: addTime,
+     year: addYear
+   });
+
+   var handleEventAdd = document.getElementById('posts');  //get posts elements
+   handleEventAdd.insertAdjacentHTML('beforeend', eventHTML);
+   deleteLastMonth(); //call this to delete the last calendar
+   getEachDay();  //refresh calendar with new event
     // var postReq = new XMLHttpRequest();
     //
     // postReq.open('POST', '/addEvent');
@@ -213,7 +223,7 @@ function showAddEventModal() {
   var modalBackdrop = document.getElementById('modal-backdrop');
 
   showSomethingModal.classList.remove('hidden');
-  modalBackdrop.classList.remove('hidden');
+  //modalBackdrop.classList.remove('hidden');
 
 }
 
@@ -226,17 +236,20 @@ function clearAddEventModalInputs() {
   var modalCity = document.getElementById('post-city-input');
   */
   var postTextInputElements = [
-    document.getElementById('post-text-input'),
-    document.getElementById('post-photo-input'),
-    document.getElementById('post-price-input'),
-    document.getElementById('post-city-input')
+    document.getElementById('event-title-input'),
+    document.getElementById('event-description-input'),
+    document.getElementById('event-photo-input'),
+    document.getElementById('event-time-input'),
+    document.getElementById('event-day-input'),
+    document.getElementById('event-month-input'),
+    document.getElementById('event-year-input')
   ];
 
   /*
    * Clear any text entered in the text inputs.
    */
-  postTextInputElements.forEach(function (inputElem) {
-    inputElem.value = '';
+    postTextInputElements.forEach(function (inputElem) {
+      inputElem.value = '';
     });
     /*
     * Attempt at trying to clear the modal screen when cancel is clicked
@@ -247,11 +260,7 @@ modalCancel.onclick = function(){
   modalCity.value = "";
 }
 */
-  /*
-   * Grab the originally checked radio button and make sure it's checked.
-   */
-  var checkedPostConditionButton = document.querySelector('#post-condition-fieldset input[checked]');
-  checkedPostConditionButton.checked = true;
+
 
 }
 
@@ -261,7 +270,7 @@ function hideAddEventModal() {
   var modalBackdrop = document.getElementById('modal-backdrop');
 
   showSomethingModal.classList.add('hidden');
-  modalBackdrop.classList.add('hidden');
+//  modalBackdrop.classList.add('hidden');
 
   clearAddEventModalInputs();
 
