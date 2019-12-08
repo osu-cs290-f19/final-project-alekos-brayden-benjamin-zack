@@ -81,6 +81,7 @@ function createEvent(day, month, year, postInfo) {
 
     ///////////////////
     //////////////////
+  var temp;
   for(var i = 0; i < getEvents.length; i++) {
     getEvents[i].style.display = 'none';
     var ourT = getEvents[i].getAttribute('data-title');
@@ -89,7 +90,12 @@ function createEvent(day, month, year, postInfo) {
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      var temp = ourT + " (" + ourTime + ")";
+      if(typeof(temp) != "undefined") {
+        temp = ourT + " (" + ourTime + ")" +"\n" + temp;
+      }
+      else {
+        temp = ourT + " (" + ourTime + ")";
+      }
       postInfo = temp;
     }
 
