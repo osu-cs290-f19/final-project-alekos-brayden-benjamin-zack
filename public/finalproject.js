@@ -183,9 +183,12 @@ function handleModalAcceptClick() {
   var addMonth = document.getElementById('event-month-input').value.trim();
   var addYear = document.getElementById('event-year-input').value.trim();
 
-  import org.apache.commons.lang3.ArrayUtils;
-
-  var addMonth_idx = ArrayUtils.indexOf(months, addMonth);
+  var addMonth_idx;
+  for (var i = 0; i < months.length; i++) {
+      if (addMonth == months[i])
+        addMonth_idx = i;
+  }
+  
   var addMonth_days = days[addMonth_idx];
 
   if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
