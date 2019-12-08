@@ -192,7 +192,7 @@ function handleModalAcceptClick() {
   if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
     alert("You must fill in all of the fields!");
     }
-   else if (addDay > addMonth_days){
+   else if (Number(addDay) > Number(addMonth_days)) {
     alert("You must enter in a valid day number!");
    }
    else {
