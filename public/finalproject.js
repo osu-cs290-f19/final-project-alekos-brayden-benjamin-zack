@@ -185,6 +185,9 @@ function handleModalAcceptClick() {
 
   var addMonth_idx = months.indexOf(addMonth);
   var addMonth_days = days[addMonth_idx];
+  console.log("\nAdd month idx: ", addMonth_idx);
+  console.log("\nAdd month days: ", addMonth_days);
+  console.log("\nAdd day: ", addDay);
 
   if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
     alert("You must fill in all of the fields!");
