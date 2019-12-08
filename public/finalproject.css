@@ -38,6 +38,9 @@ header a {
 /****************404***************/
 .error-container {
   text-align: center;
+  font-size: 50px;
+  padding-top: 70px;
+  padding-left: 30px;
 }
 
 .error-container h2 {
