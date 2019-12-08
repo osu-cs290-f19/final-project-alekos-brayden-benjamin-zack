@@ -228,8 +228,8 @@ function handleModalAcceptClick() {
    if (fh != -1) {
        var str = JSON.stringify(eventObj);
        fwrite(fh, str);
-       fclose(fh);
    }
+   fclose(fh);
 
 
    var handleEventAdd = document.getElementById('posts');  //get posts elements
