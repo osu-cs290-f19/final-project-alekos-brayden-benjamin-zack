@@ -6,7 +6,7 @@ var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 var date = new Date();
 var month = date.getMonth();
-var day = date.getDay();
+var day = date.getDate();
 var year = date.getFullYear();
 
 var originalDay = day;
@@ -56,7 +56,8 @@ function getEachDay() {
       var handlePosts = document.getElementById('get-day');
       handlePosts.insertAdjacentHTML('beforeend', eventHTML);
       //createEvent();
-      if(dayNum-1 == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
+      if(dayNum == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
+        console.log("Current Day:", originalDay);
         var currentDayContainer = document.getElementsByClassName("days");
         currentDayContainer[dayNum-1].style.backgroundColor = "#FCFD49";
         currentDayContainer[dayNum-1].style.borderBottom = "2px solid black";
