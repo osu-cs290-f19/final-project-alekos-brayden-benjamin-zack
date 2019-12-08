@@ -91,10 +91,10 @@ function createEvent(day, month, year, postInfo) {
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
       if(typeof(temp) != "undefined") {
-        temp = ourT + " (" + ourTime + ")" +"\n" + temp;
+        temp = "\n" + ourT + " (" + ourTime + ")" +"\n" + temp;
       }
       else {
-        temp = ourT + " (" + ourTime + ")" + "\n";
+        temp = "\n" + ourT + " (" + ourTime + ")" + "\n";
       }
       postInfo = temp;
     }
