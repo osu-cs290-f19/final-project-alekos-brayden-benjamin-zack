@@ -183,9 +183,16 @@ function handleModalAcceptClick() {
   var addMonth = document.getElementById('event-month-input').value.trim();
   var addYear = document.getElementById('event-year-input').value.trim();
 
+  var addMonth_idx = months.indexOf(addMonth);
+  var addMonth_days = days[addMonth_idx];
+
   if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
     alert("You must fill in all of the fields!");
-  } else {
+    }
+   else if (addDay > addMonth_days){
+    alert("You must enter in a valid day number!");
+   }
+   else {
     addTime = to12hr(addTime);
     var eventHTML = Handlebars.templates.eventCard({ //first create handle bars thing for all areas, then store in postHTML
      description: addDescription,
