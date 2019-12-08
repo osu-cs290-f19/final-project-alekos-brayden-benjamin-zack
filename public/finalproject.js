@@ -94,7 +94,7 @@ function createEvent(day, month, year, postInfo) {
         temp = ourT + " (" + ourTime + ")" +"\n" + temp;
       }
       else {
-        temp = ourT + " (" + ourTime + ")";
+        temp = ourT + " (" + ourTime + ")" + "\n";
       }
       postInfo = temp;
     }
@@ -224,12 +224,12 @@ function handleModalAcceptClick() {
    // var script = document.currentScript;
    // var fullUrl = script.src;
    // var dir = fullUrl.substring(0, fullUrl.lastIndexOf('/'));
-   var fh = fopen('/eventData.json', 3);
-   if (fh != -1) {
-       var str = JSON.stringify(eventObj);
-       fwrite(fh, str);
-   }
-   fclose(fh);
+   // var fh = fopen('/eventData.json', 3);
+   // if (fh != -1) {
+   //     var str = JSON.stringify(eventObj);
+   //     fwrite(fh, str);
+   // }
+   // fclose(fh);
 
 
    var handleEventAdd = document.getElementById('posts');  //get posts elements
