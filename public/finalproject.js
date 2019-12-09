@@ -226,7 +226,7 @@ function handleModalAcceptClick() {
      title: addTitle,
      description: addDescription,
      time: addTime,
-     photoURL: addPhotoURL
+     url: addPhotoURL
    });
 
    postReq.setRequestHeader('Content-Type', 'application/json');
