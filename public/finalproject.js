@@ -171,6 +171,9 @@ function to12hr(time){
   else{
     ampm = "AM";
   }
+  // var time2 = (time.slice(0,2))%12);
+  // if(time2 == 0){time2 = 12;}
+
   return ((time.slice(0,2))%12).toString() + ':' + time.slice(3,5).toString() + ' ' + ampm;
 }
 
@@ -213,31 +216,26 @@ function handleModalAcceptClick() {
      year: addYear
    });
 
+   var postReq = new XMLHttpRequest();
+   postReq.open('POST', '/addEvent');
+
+   var reqBody = JSON.stringify({
+     month: addMonth,
+     day: addDay,
+     year: addYear,
+     title: addTitle,
+     description: addDescription,
+     time: addTime,
+     photoURL: addPhotoURL
+   });
+
+   postReq.setRequestHeader('Content-Type', 'application/json');
+   postReq.send(reqBody);
+
    var handleEventAdd = document.getElementById('posts');  //get posts elements
    handleEventAdd.insertAdjacentHTML('beforeend', eventHTML);
    deleteLastMonth(); //call this to delete the last calendar
    getEachDay();  //refresh calendar with new event
-    // var postReq = new XMLHttpRequest();
-    //
-    // postReq.open('POST', '/addEvent');
-    //
-    // var reqBody = JSON.stringify({
-    //   title: title,
-    //   photoURL: photoURL,
-    //   description: description,
-    //   time: time,
-    //   day: day,
-    //   month: month,
-    //   year: year
-    // });
-    //
-    // postReq.setRequestHeader('Content-Type', 'application/json');
-    // postReq.send(reqBody);
-    //
-    // postReq.addEventListener('load', function(event){
-    //   alert('loaded information');
-    //   // insertNewEvent(description, photoURL, time, title);
-    // });
 
     hideAddEventModal();
 
