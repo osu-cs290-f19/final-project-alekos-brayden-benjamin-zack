@@ -165,16 +165,16 @@ function deleteLastMonth() {
 
 function to12hr(time){
   var ampm;
-  if(time.slice(0,2)>12){
+  if(time.slice(0,2)>=12){
     ampm = "PM";
   }
   else{
     ampm = "AM";
   }
-  // var time2 = (time.slice(0,2))%12);
-  // if(time2 == 0){time2 = 12;}
+  var timeTemp = (time.slice(0,2)%12);
+  if(timeTemp == 0){timeTemp = 12;}
 
-  return ((time.slice(0,2))%12).toString() + ':' + time.slice(3,5).toString() + ' ' + ampm;
+  return (timeTemp.toString() + ':' + time.slice(3,5).toString() + ' ' + ampm);
 }
 
 function handleModalAcceptClick() {
