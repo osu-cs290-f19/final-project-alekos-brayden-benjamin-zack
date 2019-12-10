@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "handlebars views/partials/eventCard.handlebars views/partials/calendarCard.handlebars -f public/eventCardTemplate.js",
+    "build": "handlebars views/partials/eventCard.handlebars views/partials/calendarCard.handlebars views/partials/calendarEvent.handlebars -f public/eventCardTemplate.js",
     "prestart": "npm run build"
   },
   "repository": {

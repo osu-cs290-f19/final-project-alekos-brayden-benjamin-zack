@@ -82,7 +82,7 @@ function createEvent(day, month, year, postInfo) {
 
     ///////////////////
     //////////////////
-  var temp;
+
   for(var i = 0; i < getEvents.length; i++) {
     getEvents[i].style.display = 'none';
     var ourT = getEvents[i].getAttribute('data-title');
@@ -90,16 +90,18 @@ function createEvent(day, month, year, postInfo) {
     var ourMonth = getEvents[i].getAttribute('data-month');
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
-    if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      if(typeof(temp) != "undefined") {
-        temp = ourT + " (" + ourTime + ")" +"\n" + temp;
-      }
-      else {
-        temp = ourT + " (" + ourTime + ")";
-      }
-      postInfo = temp;
-    }
+    var ourIndex = getEvents[i].getAttribute('data-index');
+    console.log("Our Index:" + ourIndex);
 
+
+    var eventHTML = Handlebars.templates.calendarCard({
+         index: ourIndex,
+    });
+
+
+    if(ourDay == day && ourMonth == months[month] && ourYear == year) {
+      postInfo.push(ourT + " (" + ourTime + ")");
+    }
   }
   return postInfo;
 }
@@ -244,9 +246,7 @@ function handleModalAcceptClick() {
    getEachDay();  //refresh calendar with new event
 
     hideAddEventModal();
-
   }
-
 }
 
 function showAddEventModal() {
@@ -256,9 +256,7 @@ function showAddEventModal() {
 
   showSomethingModal.classList.remove('hidden');
   //modalBackdrop.classList.remove('hidden');
-
 }
-
 function clearAddEventModalInputs() {
   /*
   * Initialized variables for each input in the modal
@@ -292,8 +290,6 @@ modalCancel.onclick = function(){
   modalCity.value = "";
 }
 */
-
-
 }
 
 function hideAddEventModal() {
