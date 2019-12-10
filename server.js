@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
-var bosyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
 var eventData = require('./eventData.json');
 
@@ -11,6 +11,8 @@ var port = process.env.PORT || 1324;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
@@ -25,16 +27,20 @@ app.get('/listEvents', function (req, res, next) {
 });
 
 app.post('/addEvent', function (req, res, next) {
-  // console.log(req.body);
-  // fs.writeFile(__dirname + '/eventData.json', JSON.stringify(eventData), function(err){
-  //   if(!err){
-  //     res.status(200).send();
-  //   }
-  //   else{
-  //     res.status(500).send('Fail to write to json');
-  //   }
-  // });
-  // // res.render('eventPage', { events: req.body });
+  console.log(req.body);
+  eventData.push(req.body);
+  
+  fs.writeFile(__dirname + '/eventData.json', JSON.stringify(eventData, null, 2), function(err){
+    if(!err){
+      console.log('Wrote to JSON');
+      res.status(200).send();
+    }
+    else{
+      console.log('Failed to write to JSON');
+      res.status(500).send('Fail to write to json');
+    }
+  });
+  // res.render('eventPage', { events: req.body });
 });
 
 app.get('*', function (req, res) {

@@ -6,19 +6,22 @@ var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 var date = new Date();
 var month = date.getMonth();
-var day = date.getDay();
+var day = date.getDate();
 var year = date.getFullYear();
 
 var originalDay = day;
 var originalMonth = month;
 var originalYear = year;
 
-getEachDay();
-var nextButton = document.getElementById("next-month-button");
-var prevButton = document.getElementById("prev-month-button");
+if (window.location.pathname == '/') { //only run the calendar if homepage
+  //otherwise in events page it will try to run it but cant access it
+  getEachDay();
+  var nextButton = document.getElementById("next-month-button");
+  var prevButton = document.getElementById("prev-month-button");
 
-nextButton.addEventListener('click', getNextMonth);
-prevButton.addEventListener('click', getPrevMonth);
+  nextButton.addEventListener('click', getNextMonth);
+  prevButton.addEventListener('click', getPrevMonth);
+}
 
 function getEachDay() {
   var newMonth = months[month] + " - " + year;
@@ -27,6 +30,7 @@ function getEachDay() {
     // currentMonth: newMonth
    //});
   var handleMonth = document.getElementById('this-month');
+
   handleMonth.innerHTML = newMonth;
 
   /////////////////////
@@ -61,7 +65,8 @@ function getEachDay() {
       handlePosts.insertAdjacentHTML('beforeend', eventHTML);
 
       //createEvent();
-      if(dayNum-1 == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
+      if(dayNum == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
+        console.log("Current Day:", originalDay);
         var currentDayContainer = document.getElementsByClassName("days");
         currentDayContainer[dayNum-1].style.backgroundColor = "#FCFD49";
         currentDayContainer[dayNum-1].style.borderBottom = "2px solid black";
@@ -86,6 +91,7 @@ function createEvent(day, month, year, postInfo) {
 
     ///////////////////
     //////////////////
+  var temp;
   for(var i = 0; i < getEvents.length; i++) {
     getEvents[i].style.display = 'none';
     var ourT = getEvents[i].getAttribute('data-title');
@@ -94,15 +100,21 @@ function createEvent(day, month, year, postInfo) {
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
+<<<<<<< HEAD
       postInfo.push([ourT + " (" + ourTime + ")"]);
+=======
+      if(typeof(temp) != "undefined") {
+        temp = ourT + " (" + ourTime + ")" +"\n" + temp;
+      }
+      else {
+        temp = ourT + " (" + ourTime + ")";
+      }
+      postInfo = temp;
+>>>>>>> 52e290894441e9705d80a5878ad0869437d3ddfc
     }
 
   }
   return postInfo;
-  /*var buttonListener = document.getElementsByClassName("view-event-button");
-  for(var i = 0; i < buttonListener.length; i++) {
-    buttonListener[i].addEventListener('click', getEvents);
-  }*/
 }
 
 function getNextMonth () {
@@ -164,40 +176,79 @@ function deleteLastMonth() {
 //   postContainer.insertAdjacentHTML('beforeend', postCardHTML);
 // }
 
+function to12hr(time){
+  var ampm;
+  if(time.slice(0,2)>=12){
+    ampm = "PM";
+  }
+  else{
+    ampm = "AM";
+  }
+  var timeTemp = (time.slice(0,2)%12);
+  if(timeTemp == 0){timeTemp = 12;}
+
+  return (timeTemp.toString() + ':' + time.slice(3,5).toString() + ' ' + ampm);
+}
+
 function handleModalAcceptClick() {
 
-  var title = document.getElementById('event-title-input').value.trim();
-  var photoURL = document.getElementById('event-photo-input').value.trim();
-  var description = document.getElementById('event-description-input').value.trim();
-  var time = document.getElementById('event-time-input').value.trim();
-  var day = document.getElementById('event-day-input').value.trim();
-  var month = document.getElementById('event-month-input').value.trim();
-  var year = document.getElementById('event-year-input').value.trim();
+  var addTitle = document.getElementById('event-title-input').value.trim();
+  var addPhotoURL = document.getElementById('event-photo-input').value.trim();
+  var addDescription = document.getElementById('event-description-input').value.trim();
+  var addTime = document.getElementById('event-time-input').value.trim();
+  var addDay = document.getElementById('event-day-input').value.trim();
+  var addMonth = document.getElementById('event-month-input').value.trim();
+  var addYear = document.getElementById('event-year-input').value.trim();
 
-  if (!description || !photoURL || !title || !day || !month || !time || !year) {
+  var addMonth_idx;
+  for (var i = 0; i < months.length; i++) {
+      if (addMonth == months[i])
+        addMonth_idx = i;
+  }
+
+  var addMonth_days = days[addMonth_idx];
+
+  if (!addDescription || !addPhotoURL || !addTitle || !addDay || !addMonth || !addTime || !addYear) {
     alert("You must fill in all of the fields!");
-  } else {
-    // var postReq = new XMLHttpRequest();
-    //
-    // postReq.open('POST', '/addEvent');
-    //
-    // var reqBody = JSON.stringify({
-    //   title: title,
-    //   photoURL: photoURL,
-    //   description: description,
-    //   time: time,
-    //   day: day,
-    //   month: month,
-    //   year: year
-    // });
-    //
-    // postReq.setRequestHeader('Content-Type', 'application/json');
-    // postReq.send(reqBody);
-    //
-    // postReq.addEventListener('load', function(event){
-    //   alert('loaded information');
-    //   // insertNewEvent(description, photoURL, time, title);
-    // });
+    }
+   else if (Number(addDay) > Number(addMonth_days)) {
+    alert("You must enter in a valid day number!");
+   }
+   else if (addDay.includes("-") || addYear.includes("-") ) {
+    alert("Please include valid numerical entries.");
+   }
+   else {
+    addTime = to12hr(addTime);
+    var eventHTML = Handlebars.templates.eventCard({ //first create handle bars thing for all areas, then store in postHTML
+     description: addDescription,
+     photoURL: addPhotoURL,
+     title: addTitle,
+     day: addDay,
+     month: addMonth,
+     time: addTime,
+     year: addYear
+   });
+
+   var postReq = new XMLHttpRequest();
+   postReq.open('POST', '/addEvent');
+
+   var reqBody = JSON.stringify({
+     month: addMonth,
+     day: addDay,
+     year: addYear,
+     title: addTitle,
+     description: addDescription,
+     time: addTime,
+     url: addPhotoURL
+   });
+
+   postReq.setRequestHeader('Content-Type', 'application/json');
+   postReq.send(reqBody);
+
+   var handleEventAdd = document.getElementById('posts');  //get posts elements
+   handleEventAdd.insertAdjacentHTML('beforeend', eventHTML);
+   deleteLastMonth(); //call this to delete the last calendar
+   getEachDay();  //refresh calendar with new event
 
     hideAddEventModal();
 
@@ -211,7 +262,7 @@ function showAddEventModal() {
   var modalBackdrop = document.getElementById('modal-backdrop');
 
   showSomethingModal.classList.remove('hidden');
-  modalBackdrop.classList.remove('hidden');
+  //modalBackdrop.classList.remove('hidden');
 
 }
 
@@ -224,17 +275,20 @@ function clearAddEventModalInputs() {
   var modalCity = document.getElementById('post-city-input');
   */
   var postTextInputElements = [
-    document.getElementById('post-text-input'),
-    document.getElementById('post-photo-input'),
-    document.getElementById('post-price-input'),
-    document.getElementById('post-city-input')
+    document.getElementById('event-title-input'),
+    document.getElementById('event-description-input'),
+    document.getElementById('event-photo-input'),
+    document.getElementById('event-time-input'),
+    document.getElementById('event-day-input'),
+    document.getElementById('event-month-input'),
+    document.getElementById('event-year-input')
   ];
 
   /*
    * Clear any text entered in the text inputs.
    */
-  postTextInputElements.forEach(function (inputElem) {
-    inputElem.value = '';
+    postTextInputElements.forEach(function (inputElem) {
+      inputElem.value = '';
     });
     /*
     * Attempt at trying to clear the modal screen when cancel is clicked
@@ -245,11 +299,7 @@ modalCancel.onclick = function(){
   modalCity.value = "";
 }
 */
-  /*
-   * Grab the originally checked radio button and make sure it's checked.
-   */
-  var checkedPostConditionButton = document.querySelector('#post-condition-fieldset input[checked]');
-  checkedPostConditionButton.checked = true;
+
 
 }
 
@@ -259,7 +309,7 @@ function hideAddEventModal() {
   var modalBackdrop = document.getElementById('modal-backdrop');
 
   showSomethingModal.classList.add('hidden');
-  modalBackdrop.classList.add('hidden');
+//  modalBackdrop.classList.add('hidden');
 
   clearAddEventModalInputs();
 
@@ -289,7 +339,7 @@ for (var i = 0; i < modalHideButtons.length; i++) {
 ****************************************/
 
 function listEvents() {
-  // alert('Button Pressed!');
+  //alert('Button Pressed!');
 }
 
 var listEventsButton = document.getElementById('list-events-button');
