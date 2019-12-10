@@ -48,6 +48,7 @@ function getEachDay() {
     if(i >= k) {  //if days have started for that month(i.e to get right day)
       postInfo = " ";
       postInfo = createEvent(dayNum, month, year, postInfo);
+
       var eventHTML = Handlebars.templates.calendarCard({
            dayNum: dayNum,
            postInfo: postInfo
@@ -82,7 +83,11 @@ function createEvent(day, month, year, postInfo) {
 
     ///////////////////
     //////////////////
-  var temp;
+  var temp = [{
+    info: "",
+    index: ""
+  }];
+
   for(var i = 0; i < getEvents.length; i++) {
     getEvents[i].style.display = 'none';
     var ourT = getEvents[i].getAttribute('data-title');
@@ -90,17 +95,17 @@ function createEvent(day, month, year, postInfo) {
     var ourMonth = getEvents[i].getAttribute('data-month');
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
-    if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      if(typeof(temp) != "undefined") {
-        temp = ourT + " (" + ourTime + ")" +"\n" + temp;
-      }
-      else {
-        temp = ourT + " (" + ourTime + ")";
-      }
-      postInfo = temp;
-    }
+    var ourIndex = getEvents[i].getAttribute('data-index');
 
+    if(ourDay == day && ourMonth == months[month] && ourYear == year) {
+      temp.push({
+        info: ourT + " (" + ourTime + ")",
+        index: ourIndex
+      });
+    }
+    postInfo = temp;
   }
+
   return postInfo;
 }
 
@@ -136,7 +141,7 @@ function deleteLastMonth() {
   var noMatchThree = document.getElementsByClassName('day-container');
   for(var i = 0; i < (totalDays + k); i++) {
       noMatch[0].remove();
-      noMatchTwo[0].remove();
+      //noMatchTwo[0].remove();
       noMatchThree[0].remove();
   }
 }
@@ -244,9 +249,7 @@ function handleModalAcceptClick() {
    getEachDay();  //refresh calendar with new event
 
     hideAddEventModal();
-
   }
-
 }
 
 function showAddEventModal() {
@@ -256,9 +259,7 @@ function showAddEventModal() {
 
   showSomethingModal.classList.remove('hidden');
   //modalBackdrop.classList.remove('hidden');
-
 }
-
 function clearAddEventModalInputs() {
   /*
   * Initialized variables for each input in the modal
@@ -292,8 +293,6 @@ modalCancel.onclick = function(){
   modalCity.value = "";
 }
 */
-
-
 }
 
 function hideAddEventModal() {

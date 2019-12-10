@@ -2,7 +2,10 @@
   <div class="days" id="days">
     {{dayNum}}
   </div>
+
+  {{#each postInfo}}
   <div class="posts">
-    {{postInfo}}
+    <a href='/listEvents/{{this.index}}'>{{this.info}}</a>
   </div>
+  {{/each}}
 </div>
