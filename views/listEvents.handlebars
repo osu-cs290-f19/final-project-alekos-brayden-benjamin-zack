@@ -4,9 +4,15 @@
   <a href='/' class="return-calendar">Back to Calendar Page</a>
 </div>
 <section id="posts">
-
+  {{#each this}}
+      {{#if this.description}} <!-- description is unique not sure why it would only work like this but it did -->
+        {{> eventCard}}
+      {{/if}}
+  {{/each}}
   {{#each events}}
-      {{> eventCard}}
+      {{#if this.description}}
+        {{> eventCard}}
+      {{/if}}
   {{/each}}
 
 </section>
