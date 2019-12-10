@@ -28,6 +28,7 @@ function getEachDay() {
    //});
   var handleMonth = document.getElementById('this-month');
   handleMonth.innerHTML = newMonth;
+
   /////////////////////
 
   ////////////////////
@@ -39,18 +40,26 @@ function getEachDay() {
   var dayNum = 1;
   totalDays += k;
   var postInfo;
+  var postStr;
   console.log("Our day:", originalDay);
   for(var i = 0; i < totalDays; i++) {
     if(i >= k) {  //if days have started for that month(i.e to get right day)
-      postInfo = " ";
+      postInfo = [];
       postInfo = createEvent(dayNum, month, year, postInfo);
+
+      postStr="";
+      for(var e=0; e < postInfo.length; e++) {
+        postStr += (postInfo[e] + "");
+      }
+
       var eventHTML = Handlebars.templates.calendarCard({
            dayNum: dayNum,
-           postInfo: postInfo
+           postInfo: postStr
       });
 
       var handlePosts = document.getElementById('get-day');
       handlePosts.insertAdjacentHTML('beforeend', eventHTML);
+
       //createEvent();
       if(dayNum-1 == originalDay && month == originalMonth && year == originalYear) { //-1 because its in an array i.e. 0-x
         var currentDayContainer = document.getElementsByClassName("days");
@@ -85,8 +94,7 @@ function createEvent(day, month, year, postInfo) {
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      var temp = ourT + " (" + ourTime + ")";
-      postInfo = temp;
+      postInfo.push([ourT + " (" + ourTime + ")"]);
     }
 
   }
