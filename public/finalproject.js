@@ -48,6 +48,7 @@ function getEachDay() {
     if(i >= k) {  //if days have started for that month(i.e to get right day)
       postInfo = " ";
       postInfo = createEvent(dayNum, month, year, postInfo);
+
       var eventHTML = Handlebars.templates.calendarCard({
            dayNum: dayNum,
            postInfo: postInfo
@@ -82,6 +83,10 @@ function createEvent(day, month, year, postInfo) {
 
     ///////////////////
     //////////////////
+  var temp = [{
+    info: "",
+    index: ""
+  }];
 
   for(var i = 0; i < getEvents.length; i++) {
     getEvents[i].style.display = 'none';
@@ -91,18 +96,16 @@ function createEvent(day, month, year, postInfo) {
     var ourDay = getEvents[i].getAttribute('data-day');
     var ourYear = getEvents[i].getAttribute('data-year');
     var ourIndex = getEvents[i].getAttribute('data-index');
-    console.log("Our Index:" + ourIndex);
-
-
-    var eventHTML = Handlebars.templates.calendarCard({
-         index: ourIndex,
-    });
-
 
     if(ourDay == day && ourMonth == months[month] && ourYear == year) {
-      postInfo.push(ourT + " (" + ourTime + ")");
+      temp.push({
+        info: ourT + " (" + ourTime + ")",
+        index: ourIndex
+      });
     }
+    postInfo = temp;
   }
+
   return postInfo;
 }
 
@@ -138,7 +141,7 @@ function deleteLastMonth() {
   var noMatchThree = document.getElementsByClassName('day-container');
   for(var i = 0; i < (totalDays + k); i++) {
       noMatch[0].remove();
-      noMatchTwo[0].remove();
+      //noMatchTwo[0].remove();
       noMatchThree[0].remove();
   }
 }

@@ -34,12 +34,12 @@ templates['eventCard'] = template({"compiler":[8,">= 4.3.0"],"main":function(con
     + " </p>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 },"useData":true});
 templates['calendarCard'] = template({"1":function(container,depth0,helpers,partials,data) {
-    var stack1, helper;
+    var alias1=container.lambda, alias2=container.escapeExpression;
 
   return "  <div class=\"posts\">\r\n    <a href='/listEvents/"
-    + container.escapeExpression(((helper = (helper = helpers.index || (depth0 != null ? depth0.index : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"index","hash":{},"data":data,"loc":{"start":{"line":8,"column":25},"end":{"line":8,"column":34}}}) : helper)))
+    + alias2(alias1((depth0 != null ? depth0.index : depth0), depth0))
     + "'>"
-    + ((stack1 = container.lambda(depth0, depth0)) != null ? stack1 : "")
+    + alias2(alias1((depth0 != null ? depth0.info : depth0), depth0))
     + "</a>\r\n  </div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
@@ -48,15 +48,6 @@ templates['calendarCard'] = template({"1":function(container,depth0,helpers,part
     + container.escapeExpression(((helper = (helper = helpers.dayNum || (depth0 != null ? depth0.dayNum : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"dayNum","hash":{},"data":data,"loc":{"start":{"line":3,"column":4},"end":{"line":3,"column":14}}}) : helper)))
     + "\r\n  </div>\r\n\r\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.postInfo : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":6,"column":2},"end":{"line":10,"column":11}}})) != null ? stack1 : "")
-    + "\r\n</div>\r\n";
-},"useData":true});
-templates['calendarEvent'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function";
-
-  return "<div class=\"idv-event-container\">\r\n  <a href='/listEvents/"
-    + container.escapeExpression(((helper = (helper = helpers.index || (depth0 != null ? depth0.index : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":2,"column":23},"end":{"line":2,"column":32}}}) : helper)))
-    + "'>"
-    + ((stack1 = ((helper = (helper = helpers.postInfo || (depth0 != null ? depth0.postInfo : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"postInfo","hash":{},"data":data,"loc":{"start":{"line":2,"column":34},"end":{"line":2,"column":48}}}) : helper))) != null ? stack1 : "")
-    + "</a>\r\n</div>\r\n";
+    + "</div>\r\n";
 },"useData":true});
 })();

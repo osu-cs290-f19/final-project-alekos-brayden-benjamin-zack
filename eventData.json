@@ -68,5 +68,15 @@
     "time": "10:00 PM",
     "index": 6,
     "url": "https://i.ytimg.com/sh/ow8-ZftRoZelY710tvO45Q/market.jpg"
+  },
+  {
+    "month": "December",
+    "day": "25",
+    "year": "2019",
+    "title": "Christmas",
+    "description": "Merry Christmas!",
+    "time": "12:00 AM",
+    "index": 7,
+    "url": "https://ichef.bbci.co.uk/news/912/cpsprodpb/12218/production/_87246247_istock_000049800006_medium.jpg"
   }
 ]

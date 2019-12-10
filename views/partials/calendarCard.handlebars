@@ -1,12 +1,11 @@
-<div class="day-container" data-index="{{index}}" id="day-container">
+<div class="day-container" id="day-container">
   <div class="days" id="days">
     {{dayNum}}
   </div>
 
   {{#each postInfo}}
   <div class="posts">
-    <a href='/listEvents/{{index}}'>{{{this}}}</a>
+    <a href='/listEvents/{{this.index}}'>{{this.info}}</a>
   </div>
   {{/each}}
-
 </div>
