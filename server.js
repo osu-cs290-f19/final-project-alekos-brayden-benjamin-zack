@@ -29,7 +29,7 @@ app.get('/listEvents', function (req, res, next) {
 app.post('/addEvent', function (req, res, next) {
   console.log(req.body);
   eventData.push(req.body);
-  
+
   fs.writeFile(__dirname + '/eventData.json', JSON.stringify(eventData, null, 2), function(err){
     if(!err){
       console.log('Wrote to JSON');
@@ -41,6 +41,19 @@ app.post('/addEvent', function (req, res, next) {
     }
   });
   // res.render('eventPage', { events: req.body });
+});
+
+app.get('/listEvents/:n', function (req, res, next) {
+  var n = req.params.n;
+  if(n >= 0 && n < eventData.length) { //if it is in the length of
+    res.status(200).render('listEvents', {
+      events: eventData[n]
+    });
+  }
+  else {
+    next();
+  }
+
 });
 
 app.get('*', function (req, res) {
