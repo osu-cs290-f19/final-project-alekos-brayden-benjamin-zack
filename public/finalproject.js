@@ -187,6 +187,10 @@ function handleModalAcceptClick() {
   var addMonth = document.getElementById('event-month-input').value.trim();
   var addYear = document.getElementById('event-year-input').value.trim();
 
+  var getEvents = document.getElementsByClassName("post");
+
+  var addIndex = getEvents[getEvents.length-1].getAttribute('data-index'); //get our index from the last element
+  addIndex++; //update one more to include next one
   var addMonth_idx;
   for (var i = 0; i < months.length; i++) {
       if (addMonth == months[i])
@@ -213,6 +217,7 @@ function handleModalAcceptClick() {
      day: addDay,
      month: addMonth,
      time: addTime,
+     index: addIndex,
      year: addYear
    });
 
@@ -226,6 +231,7 @@ function handleModalAcceptClick() {
      title: addTitle,
      description: addDescription,
      time: addTime,
+     index: addIndex,
      url: addPhotoURL
    });
 

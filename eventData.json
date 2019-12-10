@@ -6,6 +6,7 @@
     "title": "Laptop Parade",
     "description": "Be sure to come for this sick laptop parade!",
     "time": "12:00 AM",
+    "index": 0,
     "url": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg"
   },
   {
@@ -15,6 +16,7 @@
     "title": "Star Wars Movie",
     "description": "Come hang out and binge the original trilogy!",
     "time": "10:00 PM",
+    "index": 1,
     "url": "https://i.ytimg.com/vi/mRzLJcbUVek/maxresdefault.jpg"
   },
   {
@@ -24,6 +26,7 @@
     "title": "Hotdog Eating Contest",
     "description": "Come down win this contest!",
     "time": "3:00 PM",
+    "index": 2,
     "url": "https://brooklynreporter.com/wp-content/uploads/2019/07/Corazon_Hot_Dog_Eating_Contest_DSC_3341-1024x683.jpg"
   },
   {
@@ -33,6 +36,7 @@
     "title": "Group Meeting",
     "description": "Group meeting tonight, working on final project",
     "time": "6:00 PM",
+    "index": 3,
     "url": "https://www.bitdegree.org/tutorials/wp-content/uploads/2018/08/what-is-a-web-developer.jpg"
   },
   {
@@ -42,6 +46,7 @@
     "title": "Graduation Party",
     "description": "Somehow I graduated so uhm come hang",
     "time": "2:00 PM",
+    "index": 4,
     "url": "https://assets.pcmag.com/media/images/582950-grad-gift-guide.jpg?thumb=y&width=412&height=412&boxFit=y"
   },
   {
@@ -51,6 +56,7 @@
     "title": "Football Game",
     "description": "Oregon State vs. Space Pirates! Come watch the ultimate showdown!",
     "time": "12:00 PM",
+    "index": 5,
     "url": "https://i0.wp.com/footballscoop.com/wp-content/uploads/2019/04/Oregon-State-full.jpg?fit=1541%2C866&ssl=1"
   },
   {
@@ -60,6 +66,7 @@
     "title": "Game of Thrones",
     "description": "Come binge watch the Game of Thrones series(minus the last season of course)",
     "time": "10:00 PM",
+    "index": 6,
     "url": "https://i.ytimg.com/sh/ow8-ZftRoZelY710tvO45Q/market.jpg"
   }
 ]
